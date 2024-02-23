@@ -26,6 +26,7 @@ fi
 
 docker build -f ${DOCKERFILE} -t ${IMAGE} .
 docker image save ${IMAGE} -o bin/helm-controller-${ARCH}.tar
+docker tag ${IMAGE} ghcr.io/mirantiscontainers/helm-controller:latest
 echo ${IMAGE} > bin/helm-controller-image.txt
 
 echo Built ${IMAGE}
